@@ -97,7 +97,6 @@ All tools were chosen to keep the system:
 
 - Free  
 - Offline  
-- Explainable  
 - Easy to run on standard laptops  
 
 ---
@@ -266,5 +265,6 @@ Manual test cases were used to validate:
 
 The Empathy Engine demonstrates how emotion-aware voice interaction can be built using lightweight, explainable components.  
 The project prioritizes clarity, stability, and practical engineering decisions, making it suitable for real-world AI-driven customer interaction systems.
+
 
 
