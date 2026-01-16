@@ -114,47 +114,47 @@ cd empathy-engine
 
 
 
-Create and Activate a Virtual Environment (Windows)
-python -m venv venv
-venv\Scripts\activate
+- Create and Activate a Virtual Environment (Windows)
+- python -m venv venv
+- venv\Scripts\activate
 
-Install Dependencies
-pip install -r requirements.txt
-
-
-Required libraries:
-
-vaderSentiment
-
-pyttsx3
-
-flask
-
-Running the Application
-Option 1: CLI Mode
-python main.py
+- Install Dependencies
+- pip install -r requirements.txt
 
 
-Enter text when prompted
+- Required libraries:
 
-An emotion-aware .wav file is generated and saved locally
+- vaderSentiment
 
-Option 2: Web Interface (Recommended)
-python app.py
+- pyttsx3
+
+- flask
+
+- Running the Application
+- Option 1: CLI Mode
+- python main.py
 
 
-Open a browser and navigate to:
+- Enter text when prompted
 
-http://127.0.0.1:5000
+- An emotion-aware .wav file is generated and saved locally
+
+- Option 2: Web Interface (Recommended)
+- python app.py
 
 
-From the web interface, you can:
+- Open a browser and navigate to:
 
-Enter text
+- http://127.0.0.1:5000
 
-View detected emotion and intensity
 
-Play generated audio directly in the browser
+- From the web interface, you can:
+
+- Enter text
+
+- View detected emotion and intensity
+
+- Play generated audio directly in the browser
 
 ## Emotion Detection Logic
 
@@ -266,4 +266,5 @@ Manual test cases were used to validate:
 
 The Empathy Engine demonstrates how emotion-aware voice interaction can be built using lightweight, explainable components.  
 The project prioritizes clarity, stability, and practical engineering decisions, making it suitable for real-world AI-driven customer interaction systems.
+
 
