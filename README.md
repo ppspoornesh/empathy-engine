@@ -106,7 +106,6 @@ All tools were chosen to keep the system:
 
 ### Clone the Repository
 
-```bash
 git clone https://github.com/ppspoornesh/empathy-engine.git
 cd empathy-engine
 ---
@@ -157,134 +156,114 @@ View detected emotion and intensity
 
 Play generated audio directly in the browser
 
-Emotion Detection Logic
+## Emotion Detection Logic
 
 Emotion detection uses a hybrid, explainable approach:
 
-VADER sentiment compound score in the range −1 to +1
+- VADER sentiment compound score in the range −1 to +1  
+- Rule-based heuristics for clarity and transparency  
 
-Rule-based heuristics for clarity and transparency
+### Example Rules
 
-Example rules:
-
-Strong positive sentiment or an exclamation mark indicates enthusiasm
-
-Strong negative sentiment indicates frustration
-
-Presence of a question mark indicates inquisitiveness
-
-Otherwise, the emotion is classified as positive, negative, or neutral
+- Strong positive sentiment or an exclamation mark indicates enthusiasm  
+- Strong negative sentiment indicates frustration  
+- Presence of a question mark indicates inquisitiveness  
+- Otherwise, the emotion is classified as positive, negative, or neutral  
 
 This approach keeps the system lightweight, transparent, and easy to debug.
 
-Emotion-to-Voice Mapping Strategy
-Baseline Voice Parameters
+---
 
-Rate: 150
+## Emotion-to-Voice Mapping Strategy
 
-Volume: 0.9
+### Baseline Voice Parameters
 
-Pitch: 50
+- **Rate:** 150  
+- **Volume:** 0.9  
+- **Pitch:** 50  
 
-Modulation Behavior
+### Modulation Behavior
 
-Positive / Enthusiastic
+**Positive / Enthusiastic**
+- Faster speech  
+- Slightly louder volume  
+- Higher pitch  
 
-Faster speech
+**Negative / Frustrated**
+- Slower speech  
+- Softer volume  
+- Lower pitch  
 
-Slightly louder volume
+**Inquisitive**
+- Slightly faster rate  
+- Neutral volume  
+- Slight pitch increase  
 
-Higher pitch
-
-Negative / Frustrated
-
-Slower speech
-
-Softer volume
-
-Lower pitch
-
-Inquisitive
-
-Slightly faster rate
-
-Neutral volume
-
-Slight pitch increase
-
-Neutral
-
-Baseline parameters
+**Neutral**
+- Baseline parameters  
 
 Emotion intensity determines how strongly these parameters are adjusted.
 
-Web Interface
+---
+
+## Web Interface
 
 The Flask-based web interface provides:
 
-Browser-based text input
+- Browser-based text input  
+- Real-time emotion detection  
+- Audio generation and playback  
+- Support for multiple requests without overwriting files  
 
-Real-time emotion detection
 
-Audio generation and playback
 
-Support for multiple requests without overwriting files
-
-Generated audio files are stored under:
-
-static/audio/
-
-SSML (Design-Level Support)
+## SSML (Design-Level Support)
 
 The project includes a design-level SSML builder to demonstrate how emotion-aware SSML markup such as prosody, pauses, and pitch could be generated.
 
-Due to limited SSML support in pyttsx3 on Windows, SSML execution is not enabled by default.
+Due to limited SSML support in `pyttsx3` on Windows, SSML execution is not enabled by default.  
 The architecture allows easy migration to SSML-capable TTS engines in the future without changes to core logic.
 
-Testing
+---
+
+## Testing
 
 Manual test cases were used to validate:
 
-Emotion classification
+- Emotion classification  
+- Intensity scaling  
+- Voice parameter modulation  
+- Audio generation  
+- Web interface behavior  
 
-Intensity scaling
+### Sample Inputs
 
-Voice parameter modulation
+- This is AMAZING news  
+- Why is this taking so long  
+- I am disappointed with the service  
+- Your request has been processed  
 
-Audio generation
+---
 
-Web interface behavior
+## Limitations
 
-Sample inputs:
+- Pitch control is best-effort and may not be supported on all platforms  
+- Rule-based emotion detection may miss sarcasm or complex emotions  
+- Audio quality depends on the system’s installed TTS voice  
 
-This is AMAZING news
+---
 
-Why is this taking so long
+## Future Improvements
 
-I am disappointed with the service
+- Full SSML execution using advanced TTS engines  
+- Transformer-based emotion classification  
+- Multi-language support  
+- Voice consistency across longer conversations  
 
-Your request has been processed
+---
 
-Limitations
+## Conclusion
 
-Pitch control is best-effort and may not be supported on all platforms
-
-Rule-based emotion detection may miss sarcasm or complex emotions
-
-Audio quality depends on the system’s installed TTS voice
-
-Future Improvements
-
-Full SSML execution using advanced TTS engines
-
-Transformer-based emotion classification
-
-Multi-language support
-
-Voice consistency across longer conversations
-
-Conclusion
-
-The Empathy Engine demonstrates how emotion-aware voice interaction can be built using lightweight, explainable components.
+The Empathy Engine demonstrates how emotion-aware voice interaction can be built using lightweight, explainable components.  
 The project prioritizes clarity, stability, and practical engineering decisions, making it suitable for real-world AI-driven customer interaction systems.
 
