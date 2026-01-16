@@ -46,7 +46,6 @@ The entire system is offline, lightweight, explainable, and free to run locally.
 ## High-Level System Flow
 
 
-
 Text Input
 ↓
 Emotion Detection + Intensity
@@ -265,6 +264,7 @@ Manual test cases were used to validate:
 
 The Empathy Engine demonstrates how emotion-aware voice interaction can be built using lightweight, explainable components.  
 The project prioritizes clarity, stability, and practical engineering decisions, making it suitable for real-world AI-driven customer interaction systems.
+
 
 
 
