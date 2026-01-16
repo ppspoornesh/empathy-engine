@@ -1,62 +1,51 @@
-The Empathy Engine
+# The Empathy Engine  
+**Emotion-Aware Text-to-Speech System**
 
-Emotion-Aware Text-to-Speech System
+---
 
-Project Overview
+## Project Overview
 
-The Empathy Engine is an emotion-aware Text-to-Speech (TTS) system designed to make AI-generated voices sound more human, expressive, and context-aware.
+The **Empathy Engine** is an emotion-aware Text-to-Speech (TTS) system designed to make AI-generated voices sound more human, expressive, and context-aware.
 
 While traditional TTS systems can accurately convert text into speech, they often sound robotic and emotionally flat. This project bridges that gap by detecting the emotional tone of input text and dynamically modulating vocal characteristics such as speech rate, volume, and pitch.
 
 Based on the input text, the system adapts its vocal delivery to sound:
 
-Enthusiastic for positive or exciting messages
-
-Calm and neutral for informational responses
-
-Slower and softer for frustrated or negative contexts
-
-Curious for inquisitive inputs
+- Enthusiastic for positive or exciting messages  
+- Calm and neutral for informational responses  
+- Slower and softer for frustrated or negative contexts  
+- Curious for inquisitive inputs  
 
 The entire system is offline, lightweight, explainable, and free to run locally.
 
-Key Features
+---
 
-Lightweight emotion detection using NLP
+## Key Features
 
-Support for granular emotions:
+- Lightweight emotion detection using NLP  
+- Support for granular emotions:
+  - Neutral  
+  - Positive  
+  - Negative  
+  - Enthusiastic  
+  - Frustrated  
+  - Inquisitive  
+- Emotion intensity scaling (stronger emotion results in stronger voice modulation)  
+- Dynamic control of:
+  - Speech rate  
+  - Speech volume  
+  - Speech pitch (best-effort, platform-dependent)  
+- Generates playable `.wav` audio files  
+- Web interface with instant audio playback  
+- CLI mode for quick testing  
+- Fully offline and free  
 
-Neutral
+---
 
-Positive
 
-Negative
+## High-Level System Flow
 
-Enthusiastic
 
-Frustrated
-
-Inquisitive
-
-Emotion intensity scaling (stronger emotion results in stronger voice modulation)
-
-Dynamic control of:
-
-Speech rate
-
-Speech volume
-
-Speech pitch (best-effort, platform-dependent)
-
-Generates playable .wav audio files
-
-Web interface with instant audio playback
-
-CLI mode for quick testing
-
-Fully offline and free
-
-High-Level System Flow
 
 Text Input
 ↓
@@ -68,58 +57,69 @@ Text-to-Speech Engine
 ↓
 Emotion-Aware Audio Output
 
-Architecture Overview
+
+
+
+
+---
+
+### Architecture Diagram
+
+The diagram below illustrates the complete architecture of the Empathy Engine and the flow of data through the system.
+
+![Empathy Engine Architecture](docs/architecture.png)
+
+
+## Architecture Overview
 
 The Empathy Engine follows a modular and explainable architecture:
 
-Supports both CLI and Web UI inputs
+- Supports both CLI and Web UI inputs  
+- Flask acts as a lightweight orchestration layer  
+- Clear separation of responsibilities between:
+  - Emotion detection  
+  - Voice parameter mapping  
+  - Speech synthesis  
+- Fully offline TTS generation  
+- SSML support designed as an optional future enhancement without affecting system stability  
 
-Flask acts as a lightweight orchestration layer
+---
 
-Clear separation of responsibilities between:
+## Tech Stack
 
-Emotion detection
-
-Voice parameter mapping
-
-Speech synthesis
-
-Fully offline TTS generation
-
-SSML support designed as an optional future enhancement without affecting system stability
-
-Tech Stack
-
-Language: Python 3.11
-
-Emotion Analysis: VADER Sentiment Analyzer
-
-Text-to-Speech: pyttsx3 (offline)
-
-Web Framework: Flask
-
-Frontend: HTML (Jinja2 templates)
+- **Language:** Python 3.11  
+- **Emotion Analysis:** VADER Sentiment Analyzer  
+- **Text-to-Speech:** pyttsx3 (offline)  
+- **Web Framework:** Flask  
+- **Frontend:** HTML (Jinja2 templates)  
 
 All tools were chosen to keep the system:
 
-Free
+- Free  
+- Offline  
+- Explainable  
+- Easy to run on standard laptops  
 
-Offline
+---
 
-Explainable
+## How to Download and Run the Project
 
-Easy to run on standard laptops
+### Clone the Repository
 
-How to Download and Run the Project
-1. Clone the Repository
+```bash
 git clone https://github.com/ppspoornesh/empathy-engine.git
 cd empathy-engine
+---
 
-2. Create and Activate a Virtual Environment (Windows)
+## High-Level System Flow
+
+
+
+Create and Activate a Virtual Environment (Windows)
 python -m venv venv
 venv\Scripts\activate
 
-3. Install Dependencies
+Install Dependencies
 pip install -r requirements.txt
 
 
@@ -287,3 +287,4 @@ Conclusion
 
 The Empathy Engine demonstrates how emotion-aware voice interaction can be built using lightweight, explainable components.
 The project prioritizes clarity, stability, and practical engineering decisions, making it suitable for real-world AI-driven customer interaction systems.
+
